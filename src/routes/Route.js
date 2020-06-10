@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import DefaultLayout from "../layouts/main";
+import AuthLayout from "../layouts/auth";
 
 
 
@@ -19,7 +20,7 @@ const RouteWrapper = ({
     }
     
 
-    const Layout = signed ? DefaultLayout : DefaultLayout;
+    const Layout = signed ? DefaultLayout : AuthLayout;
 
     return (
         <Route 

@@ -4,7 +4,7 @@ import history from "./services/history";
 import Routes from './routes';
 
 
-export const App: React.FunctionComponent = () => {
+export const App = () => {
   return (
     <Router history={history}>
       <Routes/>
