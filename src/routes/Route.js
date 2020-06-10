@@ -8,9 +8,8 @@ const RouteWrapper = ({
     component: Component,
     isPrivate,
     ...rest
-}: RouteWrapperProps) => {
-    const signed = true;
-
+}) => {
+    const signed = false;
     if(isPrivate && !signed){
         return <Redirect to="/"/>;
     }
@@ -18,8 +17,9 @@ const RouteWrapper = ({
     if(!isPrivate && signed){
         return <Redirect to="/dashboard"/>;
     }
+    
 
-    const Layout = signed ? DefaultLayout : null;
+    const Layout = signed ? DefaultLayout : DefaultLayout;
 
     return (
         <Route 
